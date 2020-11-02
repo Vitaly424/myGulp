@@ -10,7 +10,7 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify-es').default;
 const imagemin = require("gulp-imagemin");
 const webp = require('gulp-webp');
-const webpHtml = require('gulp-webp-html');
+// const webpHtml = require('gulp-webp-html');
 // const ttf2woff = require('gulp-ttf2woff');
 // const ttf2woff2 = require('gulp-ttf2woff2');
 
@@ -57,7 +57,7 @@ function server() {
 function html() {
    return src(path.src.html)
       .pipe(fileInclude())
-      .pipe(webpHtml())
+      // .pipe(webpHtml())
       .pipe(dest(path.build.html))
       .pipe(browserSync.stream());
 }
