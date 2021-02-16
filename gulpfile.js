@@ -28,7 +28,7 @@ const path = {
    src: {
       html: [sourceFolder +"/*.html", "!" + sourceFolder + "/_*.html"],
       css: sourceFolder + "/assets/scss/style.scss",
-      js: sourceFolder + "/assets/js/index.js",
+      js: sourceFolder + "/assets/js/**/*.js",
       img: sourceFolder + "/assets/img/**/*.{jpg,png,svg,gif,ico,webp}",
       fonts: sourceFolder + "/assets/fonts/**/*.{ttf,eot,woff,woff2}",
    },
@@ -88,10 +88,10 @@ function js() {
    return src(path.src.js)
       .pipe(fileInclude())
       .pipe(dest(path.build.js))
-      .pipe(uglify())
-      .pipe(rename({
-         extname: ".min.js"
-      }))
+      // .pipe(uglify())
+      // .pipe(rename({
+      //    extname: ".min.js"
+      // }))
       .pipe(dest(path.build.js))
       .pipe(browserSync.stream());
 }
